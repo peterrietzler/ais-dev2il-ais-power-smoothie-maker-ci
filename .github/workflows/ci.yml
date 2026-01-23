@@ -53,7 +53,7 @@ jobs:
     - name: Run tests
       run: uv run pytest --junitxml=junit.xml
 
-#    # Show test results in a human friendly way
+    # Show test results in a human friendly way
 #    - name: Create Test Result Summary
 #      uses: test-summary/action@v2
 #      with:
@@ -61,17 +61,17 @@ jobs:
 #      # ensure this runs even if tests fail
 #      if: always()
 
-    - name: Test Report
-      uses: dorny/test-reporter@v1
-      if: always()
-      with:
-        name: Pytest Results
-        path: junit.xml
-        reporter: java-junit # Works perfectly for Python JUnit XML
-
-
-#    - name: Publish Test Results
-#      uses: EnricoMi/publish-unit-test-result-action@v2
+#    - name: Test Report
+#      uses: dorny/test-reporter@v1
 #      if: always()
 #      with:
-#        files: "junit.xml"
+#        name: Pytest Results
+#        path: junit.xml
+#        reporter: java-junit # Works perfectly for Python JUnit XML
+
+
+    - name: Publish Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v2
+      if: always()
+      with:
+        files: "junit.xml"
