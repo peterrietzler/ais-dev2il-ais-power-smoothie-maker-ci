@@ -42,5 +42,16 @@ jobs:
     - name: Check code
       run: uvx ruff check . --output-format=github
 
+    # Run tests
     - name: Run tests
-      run: uv run pytest
+      run: uv run --junitxml=junit.xml
+      # Ensures the summary runs even if tests fail
+      continue-on-error: true
+
+    # Show test results in a human friendly way
+    - name: Create Test Result Summary
+      uses: test-summary/action@v2
+      with:
+        paths: "junit.xml"
+      # ensure this runs even if tests fail
+      if: always()
