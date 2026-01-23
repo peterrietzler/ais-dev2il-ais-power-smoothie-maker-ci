@@ -40,7 +40,7 @@ jobs:
 
     # Check code formatting and lint
     - name: Check code
-      run: uvx ruff check .
+      run: uvx ruff check . --output-format=github
 
     - name: Run tests
       run: uv run pytest
