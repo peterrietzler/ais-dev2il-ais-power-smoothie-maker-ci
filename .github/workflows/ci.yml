@@ -45,8 +45,6 @@ jobs:
     # Run tests
     - name: Run tests
       run: uv run pytest --junitxml=junit.xml
-      # Ensures the summary runs even if tests fail
-      continue-on-error: true
 
     # Show test results in a human friendly way
     - name: Create Test Result Summary
