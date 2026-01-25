@@ -5,11 +5,10 @@ This exercise will guide you through setting up a Continuous Integration pipelin
 automated testing is crucial and how GitHub Actions can ensure your smoothie shop runs smoothly by 
 catching bugs before they hit the blender.
 
-TODO - revisit this!
-Maximising your learning effect: You are going to use PyCharm in this exercise. PyCharm has excellent 
-code completion features that will help you a lot. If you type and use the code completion instead of 
-copy & pasting  everything, your brain will grasp it deeper and you thus have a better learning experience.
-You can also always use `CTRL + SPACE` to trigger code completion at your current cursor position.
+Maximising your learning effect: Copy & paste the code snippets in this exercise, but make sure to 
+READ THROUGH the code snippets carefully and slowly. Understanding what you are pasting is key to 
+a great learning experience. If you want to go one step further, then explain the code you've pasted
+to your peer (or to an imaginary rubber duck 🐥 in case you work alone).
 
 ## 🛫 Getting Started
 
@@ -411,8 +410,6 @@ Update the `scan` job in `ci.yml` and add this step:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
-
-TODO - cross check - do we really need the GITHUB_TOKEN here ? We've already fetched the full history 
 
 > **Why GITHUB_TOKEN ?**: `GITHUB_TOKEN` is a special token provided by GitHub Actions that allows the workflow to interact with the GitHub API.
 > `gitleaks-action` uses it to comment on your pull requests. See also https://github.com/gitleaks/gitleaks-action?tab=readme-ov-file#environment-variables
