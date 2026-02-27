@@ -15,7 +15,7 @@ def get_ingredients(recipe_file: Path) -> list[str]:
 def make_smoothie(recipe_file: Path, console: Console = Console()):
     ingredients = get_ingredients(recipe_file)
     if not ingredients:
-        console.print(f"[bold red]No ingredients found in {recipe_file.name}![/bold red]")
+        console.print(f"[bold red]No ingredients found in __ {recipe_file.name}![/bold red]")
         return ingredients
 
     console.print(f"[bold green]Starting to make: {recipe_file.stem.replace('_', ' ').title()}[/bold green]")
