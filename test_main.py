@@ -18,7 +18,7 @@ def test_get_ingredients(tmp_path: Path):
     result = get_ingredients(recipe_file)
 
     # Then: it returns the list of ingredients
-    expected = ["Apple", "Banana", "Orange"]
+    expected = ["Apple", "Banana", "Orange", "jkfldasjld"]
     assert result == expected
 
 
