@@ -436,7 +436,7 @@ Update the `scan` job in `ci.yml` and add this step at the end of the `steps`lis
 that allows the workflow to interact with the GitHub API. `gitleaks-action` uses it to comment on your 
 pull requests (you can find more information [here](https://github.com/gitleaks/gitleaks-action?tab=readme-ov-file#environment-variables)). 
 `GITHUB_TOKEN` is automatically created for each workflow run and has limited default permissions, which 
-do dot include the permission to commont on pull requests. You therefore need to update the `scan` job in `ci.yml`
+do dot include the permission to comment on pull requests. You therefore need to update the `scan` job in `ci.yml`
 and grant this permission:
    ```yaml
      scan:
