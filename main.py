@@ -22,6 +22,9 @@ def make_smoothie(recipe_file: Path, console: Console = Console()):
     joke = pyjokes.get_joke()
     console.print(f"[bold cyan]Let met enlighten you with a joke while you wait: {joke}[/bold cyan]\n")
 
+    console.print(
+        f"[bold cyan]Let met enlighten you with a joke while you wait: {joke}[/bold cyan]\n")
+
     with Progress(
         SpinnerColumn(),
         TextColumn("[progress.description]{task.description}"),
