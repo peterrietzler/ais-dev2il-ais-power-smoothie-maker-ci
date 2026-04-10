@@ -430,12 +430,17 @@ and grant this permission:
 
 Now let's leak a secret
 
-1. Add a "fake" secret to `main.py`. For example:
+1. Add a "fake" secret to `main.py`. Use **exactly** this secret:
    ```python
    my_secret = "hyddYR1i2srLYdKa" 
    ```
 2. Commit and push.
-3. 🛑 Watch the CI pipeline fail! Inspect the summary page and also your pull request. 
+3. 🛑 Watch the CI pipeline fail! Inspect the summary page and also your pull request.
+
+❓Why should I use **exactly** this secret ? Gitleaks uses a set of predefined regex patterns 
+to detect secrets. The given string matches one of these patterns (it looks like a random string, 
+which is common for secrets). It has no magic wand to find secrets 100% reliably, so for the sake 
+of demonstration, we use a string that is guaranteed to be detected.
 
 #### How to fix it?
 
