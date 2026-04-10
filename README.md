@@ -557,3 +557,31 @@ git commit -m "Add secret"
 
 💥 **BAM!** The commit is blocked! Gitleaks caught you locally. No need to wait for CI.
 Remove the secret and try committing again. It works!
+
+#### Customizing Gitleaks with `.gitleaks.toml`
+
+Sometimes gitleaks flags things that are false positives (e.g., test data, example values, or secrets in old commits you've already rotated). You can configure gitleaks by adding a `.gitleaks.toml` file to the root of your repository.
+
+Always extend the [built-in rules](https://github.com/gitleaks/gitleaks/blob/master/config/gitleaks.toml) instead of replacing them:
+
+```toml
+[extend]
+useDefault = true
+```
+
+> ⚠️ Without `useDefault = true`, your config **replaces** all built-in detection rules. You'd lose all default secret scanning.
+
+**Ignore specific commits** (e.g., old commits with rotated secrets):
+
+```toml
+[extend]
+useDefault = true
+
+[allowlist]
+commits = [
+  "f94f9225cd41270c67c96dc4b778fcc0f230b9d2"
+]
+```
+
+You can also ignore by **fingerprint** if you don't want to ignore a full commit. 
+Look out for instructions on how to use `.gitleaksignore`.
