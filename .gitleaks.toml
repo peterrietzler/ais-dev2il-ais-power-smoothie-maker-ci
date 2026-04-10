@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[allowlist]
+commits = [
+  "abc1234",
+  "def5678"
+]
