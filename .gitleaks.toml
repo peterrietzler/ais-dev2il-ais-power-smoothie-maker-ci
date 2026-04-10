@@ -3,6 +3,6 @@ useDefault = true
 
 [allowlist]
 commits = [
-  "fed4e39",
-  "def5678"
+  "f94f9225cd41270c67c96dc4b778fcc0f230b9d2",
+  "fed4e39dd50e34bdcbe351cdc74cad837800e9d3"
 ]
