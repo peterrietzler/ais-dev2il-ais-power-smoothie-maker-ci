@@ -590,3 +590,25 @@ commits = [
 
 You can also ignore by **fingerprint** if you don't want to ignore a full commit. 
 Look out for instructions on how to use `.gitleaksignore`.
+
+
+#### Gitleaks Troubleshooting
+
+**What does gitleaks scan?**
+
+It depends on how the workflow is triggered:
+
+| Trigger | What is scanned |
+|---|---|
+| `push` | Only the commits included in that push |
+| `pull_request` | All commits in the PR |
+| `schedule` or `workflow_dispatch` | The **entire git history** |
+
+This is why secrets in old commits surface when you run gitleaks manually or on a schedule — those events have no commit range restriction, so gitleaks scans everything.
+
+**What about branches?**
+
+When you push new commits to a branch, only those new commits are scanned. When you open or update a pull request, all commits in that PR are scanned. Commits that were already on `main` before the PR are not re-scanned.
+
+This means a secret that was committed directly to `main` in the past may never be caught by a `push` or `pull_request` scan — but will show up on a `schedule` or `workflow_dispatch` run.
+
