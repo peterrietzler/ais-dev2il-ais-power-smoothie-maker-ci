@@ -40,7 +40,8 @@ def make_smoothie(recipe_file: Path, console: Console = Console()):
         time.sleep(2)
         progress.remove_task(blend_task)
 
-    console.print(f"[bold yellow]✨ Smoothie '{recipe_file.stem.replace('_', ' ').title()}' is ready! Enjoy! ✨[/bold yellow]")
+        console.print(f"[bold yellow]✨ Smoothie '{recipe_file.stem.replace('_', ' ').title()}' is ready! Enjoy! ✨[/bold yellow]")
+        console.print(f"[bold yellow]✨ Smoothie '{recipe_file.stem.replace('_', ' ').title()}' is ready! Enjoy! ✨[/bold yellow]")
 
 
 def main():
